@@ -1,0 +1,23 @@
+.Menu {
+  position: fixed;
+  right: 0.8rem;
+  top: 30px;
+  z-index: 10;
+  text-align: right;
+  transform-origin: bottom right;
+  transform: rotate(-90deg) translateX(28px);
+}
+
+.Menu nav {
+  margin-top: 10px;
+  font-size: 1rem;
+}
+
+.Menu nav a {
+  margin-left: 20px;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.8s;
+}

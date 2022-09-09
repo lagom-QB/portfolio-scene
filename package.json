@@ -1,0 +1,53 @@
+{
+  "name": "portfolio-scene",
+  "version": "0.1.0",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@apollo/client": "^3.6.9",
+    "@react-three/drei": "^9.25.1",
+    "@react-three/fiber": "^8.7.2",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.3.0",
+    "@testing-library/user-event": "^13.5.0",
+    "framer-motion": "^7.2.1",
+    "graphql": "^16.6.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "react-spring": "^9.5.2",
+    "react-three-fiber": "^6.0.13",
+    "three": "^0.143.0",
+    "troika-three-text": "^0.46.4",
+    "web-vitals": "^2.1.4",
+    "zustand": "^4.1.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "predeploy": "npm run build ",
+    "deploy": "gh-pages -d build ",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/three": "^0.143.2"
+  }
+}
