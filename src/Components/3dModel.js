@@ -315,6 +315,7 @@ function Projects({ label, data }) {
           position={[39, 80 + idx / 2, -60 + idx]}
           letterSpacing={0.01}
           scale={[1, 1, 0.5]}
+          onClick={() => window.open(projects.link)}
         >
           {projects.name}
           <meshNormalMaterial flatShading />
