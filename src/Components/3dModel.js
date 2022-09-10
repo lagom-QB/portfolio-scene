@@ -16,7 +16,7 @@ import React, {
   useState,
   useEffect,
 } from "react";
-import { useTransform, useScroll, motion } from "framer-motion";
+import { useTransform, useScroll } from "framer-motion";
 import * as THREE from "three";
 // -------------- Components----------------------------------
 import Model from "./modelScene";

@@ -1,43 +1,7 @@
 import "./Styles/Roadmap.css";
 import { useState } from "react";
-// import { motion } from "framer-motion";
 import { useUIStore } from "../App";
 import * as THREE from "three";
-/* ------------Navigation Module ------------------- */
-/* function NavItem({ changeLocation, children, offset, isActive }) {
-  const ref = useRef();
-  const place = {
-    cursor: "pointer",
-    transition: "all 0.5s easeInOut",
-    borderRadius: "5%",
-    scale: isActive ? 1.2 : 1,
-  };
-
-  return (
-    <motion.h1
-      ref={ref}
-      style={place}
-      onClick={() => {
-        changeLocation(ref);
-      }}
-      initial={{
-        x: -offset,
-        opacity: 0,
-      }}
-      animate={{
-        x: 0,
-        opacity: 1,
-      }}
-      exit={{
-        x: -offset,
-        opacity: 0,
-      }}
-      transition={{ type: "spring", damping: 10, stiffness: 100 }}
-    >
-      {children}
-    </motion.h1>
-  );
-} */
 /* -------------------------------------------------- */
 const RoadMap = () => {
   const [isExpanded, setIsExpanded] = useState(false),
