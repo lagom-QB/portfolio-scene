@@ -60,7 +60,7 @@ const RoadMap = () => {
             );
           }}
         >
-          <h1>{isExpanded ? "X" : "RoadMap"}</h1>
+          <h1>{isExpanded ? "X" : "Home"}</h1>
         </div>
       </div>
     </div>
