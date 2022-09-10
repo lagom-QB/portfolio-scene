@@ -47,33 +47,34 @@ const RoadMap = () => {
   const setHomeRoute = useUIStore((state) => state.setHomeRoute);
   const setHomeRotation = useUIStore((state) => state.setHomeRotation);
   const setHomeState = useUIStore((state) => state.setHomeState);
-  const setClickedToolsState = useUIStore((state) => state.setClickedToolsState);
-  const setClickedProjectsState = useUIStore((state) => state.setClickedProjectsState);
+  const setClickedToolsState = useUIStore(
+    (state) => state.setClickedToolsState
+  );
+  const setClickedProjectsState = useUIStore(
+    (state) => state.setClickedProjectsState
+  );
 
   //------------------------Styles
   const footer = {
       position: "fixed",
-      bottom: "2%",
-      //gap: "10rem",
+    bottom: "2%",
+      left: "40vw",
       backgroundColor: "transparent",
       maxHeight: "2rem",
-      paddingLeft: "10vw",
-      paddingRight: "10vw",
     },
     roadMapDiv = {
       display: "flex",
-      width: "min(90vw, calc(70%))",
+      width: "min(60vw, calc(70%))",
       backgroundColor: "transparent",
-      paddingLeft: "10vw",
-      paddingRight: "10vw",
+      alignItems: "center",
+      justifyContent: "center",
     },
     button = {
       backgroundColor: "transparent",
       cursor: "pointer",
-      marginRight: "20%",
       transition: "all 0.5s easeIn",
-      opacity: !isExpanded ? 1 : 0.9,
-      fontSize: "clamp(1rem, 1vw, 1.2rem)",
+      opacity: !isExpanded ? 1 : 0.8,
+      fontSize: "clamp(.8rem, 1vw, 1rem)",
       transform: `scale(${!isExpanded ? "1" : "2"})`,
     };
   /* ---------------- */
@@ -92,7 +93,6 @@ const RoadMap = () => {
               setHomeState(false), ///
               setClickedToolsState(false),
               setClickedProjectsState(false)
-
             );
           }}
         >

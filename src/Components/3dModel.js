@@ -104,8 +104,6 @@ function ButtonClickable({
       return e.stopPropagation(), setHover(true);
     };
 
-  console.log("data......", data, clicked, clickedTools, clickedProjects);
-
   // ------------------------ Hooks
   useEffect(() => {
     document.body.style.cursor = hover
@@ -156,7 +154,7 @@ function ButtonClickable({
     </Text3D>
   );
 }
-function TextGlowy(data) {
+function AboutMe(data) {
   const name = "Quinsy Brenda",
     title = "About Me",
     allAboutMes = [];
@@ -195,26 +193,7 @@ function TextGlowy(data) {
           {title}
           <meshNormalMaterial />
         </Text3D>
-        <motion.mesh
-          position={[4, 25, -20]}
-          scale={3.8}
-          castShadow
-          initial={{
-            opacity: 0,
-          }}
-          animate={{
-            opacity: 1,
-          }}
-          exit={{
-            opacity: 0,
-          }}
-          transition={{
-            type: "wobbly",
-            damping: 10,
-            stiffness: 100,
-            duration: 5,
-          }}
-        >
+        <mesh position={[4, 25, -20]} scale={3.8} castShadow>
           {allAboutMes.map((item, index) => {
             return (
               <Text
@@ -231,7 +210,7 @@ function TextGlowy(data) {
               </Text>
             );
           })}
-        </motion.mesh>
+        </mesh>
 
         <Text
           lineHeight={0.5}
@@ -292,6 +271,13 @@ function Tools({
   );
 }
 function Projects({ label, data }) {
+  const [hover, setHover] = useState(false),
+    ref = useRef(),
+    out = () => setHover(false),
+    over = (e) => {
+      // eslint-disable-next-line no-sequences
+      return e.stopPropagation(), setHover(true);
+    };
   return (
     <>
       <Text3D
@@ -307,19 +293,22 @@ function Projects({ label, data }) {
         <meshNormalMaterial flatShading />
       </Text3D>
       {data?.projects.map((projects, idx) => (
-        <Text3D
-          cashShadow
-          font="/Inter-Bold.json"
+        <Text
+          ref={ref}
           key={idx}
           rotation={[Math.PI / 4, -Math.PI / 2, 0]}
-          position={[39, 80 + idx / 2, -60 + idx]}
-          letterSpacing={0.01}
-          scale={[1, 1, 0.5]}
+          position={[33, 80 + idx / 2, -53 + idx]}
+          letterSpacing={0.03}
+          lineHeight={1.2}
+          scale={[12, 12, 0.5]}
+          onPointerOver={over}
+          onPointerOut={out}
           onClick={() => window.open(projects.link)}
         >
           {projects.name}
-          <meshNormalMaterial flatShading />
-        </Text3D>
+          <meshBasicMaterial color={hover ? "#6666ff" : "#ffbb00"} />
+          {/* <meshNormalMaterial flatShading /> */}
+        </Text>
       ))}
     </>
   );
@@ -380,7 +369,7 @@ export default function CanvasModel() {
         camera
       >
         <Suspense fallback={<Loader />}>
-          <fog attach="fog" args={["black", 30, 10]} />
+          <fog attach="fog" args={["black", 18, 10]} />
           <Stars
             radius={50}
             depth={50}
@@ -393,7 +382,7 @@ export default function CanvasModel() {
           <ambientLight intensity={0.2} />
           <ScrollThroughModel />
           <SceneLights />
-          {dataA?.authors?.length && <TextGlowy data={dataA} />}
+          {dataA?.authors?.length && <AboutMe data={dataA} />}
           {dataT?.toolz?.length && (
             <Tools
               label={toolsLabel}
