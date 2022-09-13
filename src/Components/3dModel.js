@@ -305,7 +305,11 @@ function Projects({ label, data }) {
           onPointerOut={out}
           onClick={() => window.open(projects.link)}
         >
-          {projects.name}
+          {projects.name?.includes("Processing")
+            ? projects.name
+            : projects.name?.includes("Design")
+            ? projects.name
+            : null}
           <meshBasicMaterial color={hover ? "#6666ff" : "#ffbb00"} />
           {/* <meshNormalMaterial flatShading /> */}
         </Text>
